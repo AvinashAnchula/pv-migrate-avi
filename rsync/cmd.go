@@ -35,7 +35,7 @@ func (c *Cmd) Build() (string, error) {
 
 	sshArgs := []string{
 		"ssh", "-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null",
-		"-o", "ConnectTimeout=5",
+		"-o", "ConnectTimeout=120",
 	}
 	if c.Port != 0 {
 		sshArgs = append(sshArgs, "-p", strconv.Itoa(c.Port))
